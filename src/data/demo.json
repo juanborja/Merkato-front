@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Tuerca",
+        "stock": 20,
+        "price": 14
+    },
+    {
+        "name":"Tornillo",
+        "stock": 40,
+        "price": 10
+    },
+    {
+        "name":"Clavo",
+        "stock": 6000,
+        "price": 3
+    },
+    {
+        "name":"Arandela",
+        "stock": 7000,
+        "price": 1
+    }
+]
+    
