@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import List from './components/List.js'
+import List from './components/List.jsx'
 import './App.css';
-
+import data from "./data/demo";
 function App() {
   return (
     
-      <List value='Colo puto, te cabe' otro='POr gil'/>
+      <List items={data}/>
      
   );
 }
