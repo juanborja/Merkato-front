@@ -3,13 +3,12 @@ import {Table, TableContainer, TableHead, TableCell, TableBody, Paper, TableRow,
 import Actions from './Actions';
 import axios from 'axios';
 
-
 const List = (props)=>{
   const [items, setItems] = React.useState([]);
-React.useEffect(()=>{
-  axios.get('http://127.0.0.1:5000/product').then(res=>{
-    const data = res.data;
-    setItems(data.data)
+  React.useEffect(()=>{
+  axios.get('https://api.stackexchange.com/2.2/answers?page=1&pagesize=10&order=desc&sort=activity&site=stackoverflow').then(res=>{
+    console.log(res.data);
+    setItems(res.data.items)
   });
 },[]);
     const [isOpen, setOpen] = React.useState(false);
@@ -30,9 +29,9 @@ React.useEffect(()=>{
             {items.map((item) => (
               <TableRow key=''>
                
-                <TableCell >{item.name }</TableCell>
-                <TableCell >{item.description}</TableCell>
-                <TableCell ><Actions onClick= {handleVer} name={item.name} hook= {setOpen}/></TableCell>
+                <TableCell >{item.question_id }</TableCell>
+                <TableCell >{item.answer_id}</TableCell>
+                <TableCell ><Actions onClick= {handleVer} name={item.owner.display_name} hook= {setOpen}/></TableCell>
               </TableRow>
             ))}
           </TableBody>
